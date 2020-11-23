@@ -1,4 +1,4 @@
-package kr.co.kh;
+package kr.co.kh.function;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class HaksaProject {
+public class HaksaProject1 {
 
 	public static void main(String[] args) {
 		BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
@@ -17,13 +17,13 @@ public class HaksaProject {
 		Connection conn = null;
 		Statement stmt = null;
 		try {
-			Class.forName("oracle.jdbc.OracleDriver");
+			Class.forName("com.mysql.jdbc.Driver");
 		} catch (ClassNotFoundException e1) {
 			e1.printStackTrace();
 		}
 		while (true) {
 			try {
-				conn = DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:XE","khbclass","dkdlxl");
+				conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/mysql?characterEncoding=utf8","root","");
 			} catch (SQLException e2) {
 				e2.printStackTrace();
 			}

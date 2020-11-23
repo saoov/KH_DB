@@ -35,7 +35,7 @@ ALTER TABLE professor
 	ADD CONSTRAINT  XPK교수 PRIMARY KEY (no);
 
 
-CREATE TABLE student
+CREATE TABLE student2
 (
 	no                    NUMBER(3)  NOT NULL ,
 	age                   NUMBER(3)  NULL ,
@@ -44,9 +44,9 @@ CREATE TABLE student
 );
 
 
-CREATE SEQUENCE student_no
+CREATE SEQUENCE student2_no
 
-drop table student
+drop table student2
 
 CREATE UNIQUE INDEX XPK학생 ON student
 (no  ASC);

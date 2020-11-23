@@ -17,13 +17,13 @@ public class HaksaProject {
 		Connection conn = null;
 		Statement stmt = null;
 		try {
-			Class.forName("oracle.jdbc.OracleDriver");
+			Class.forName("com.mysql.jdbc.Driver");
 		} catch (ClassNotFoundException e1) {
 			e1.printStackTrace();
 		}
 		while (true) {
 			try {
-				conn = DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:XE","khbclass","dkdlxl");
+				conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/mysql?characterEncoding=utf8","root","");
 			} catch (SQLException e2) {
 				e2.printStackTrace();
 			}
@@ -66,8 +66,7 @@ public class HaksaProject {
 							stmt = conn.createStatement();
 							int age = Integer.parseInt(age1);
 							int hakbun = Integer.parseInt(hakbun1);
-							String sql = "insert into student2(no, age,irum,hakbun)values(student2_no.nextval," + age
-									+ ",'" + irum + "'," + hakbun + ")";
+							String sql = "insert into student(age,irum,hakbun)values("+age+ ",'" + irum + "'," + hakbun + ")";
 							cnt = stmt.executeUpdate(sql);
 							System.out.println(cnt + "건 학생이 등록되었습니다.");
 						} catch (NumberFormatException e) {
